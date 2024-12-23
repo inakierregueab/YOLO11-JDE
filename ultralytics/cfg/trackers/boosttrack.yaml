@@ -1,0 +1,29 @@
+tracker_type: boosttrack # tracker type, ['botsort', 'bytetrack', 'smiletrack', 'boosttrack']
+
+# General tracking arguments
+max_age: 30   # buffer to calculate the time when to remove tracks
+iou_thresh: 0.5
+det_thresh: 0.4   # 0.4 MOT17, 0.6 MOT20, 0.5 General
+min_hits: 3
+use_ecc: True
+with_reid: True
+min_box_area: 10  # threshold for min box areas (for tracker evaluation, not used for now)
+aspect_ratio_thresh: 1.6 # threshold for aspect ratio
+
+# BoostTrack arguments
+lambda_iou: 0.5   # 0 to turn off
+lambda_mhd: 0.25  # 0 to turn off
+lambda_shape: 0.25  # 0 to turn off
+use_dlo_boost: True
+use_duo_boost: True
+dlo_boost_coef: 0.65  # 0.65 MOT17, 0.5 MOT20, 0.6 General
+s_sim_corr: False
+
+# BoostTrack++ arguments
+use_rich_s: True
+use_sb: True
+use_vt: True
+
+
+
+

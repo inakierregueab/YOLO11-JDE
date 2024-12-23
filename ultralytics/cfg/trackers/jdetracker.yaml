@@ -1,0 +1,14 @@
+tracker_type: jdetracker # tracker type, ['botsort', 'bytetrack', 'smiletrack']
+
+# Tracking arguments
+track_buffer: 40 # buffer to calculate the time when to remove tracks
+conf_thresh: 0.35 # threshold for detection (FairMOT uses 0.4)
+first_match_thresh: 0.1 # threshold for matching the first association (FairMOT uses 0.4)
+second_match_thresh: 0.85 # threshold for matching the second association (FairMOT uses 0.5)
+new_match_thresh: 0.7 # threshold for creating a new track (FairMOT uses 0.7)
+
+# ReID arguments
+with_reid: True  # always True for this tracker
+
+
+

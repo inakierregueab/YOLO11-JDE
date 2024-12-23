@@ -1,0 +1,23 @@
+tracker_type: smiletrack # tracker type, ['botsort', 'bytetrack', 'smiletrack']
+
+# Tracking arguments
+track_high_thresh: 0.6 # threshold for the first association
+track_low_thresh: 0.1 # threshold for the second association
+new_track_thresh: 0.7 # threshold for init new track if the detection does not match any tracks
+track_buffer: 30 # buffer to calculate the time when to remove tracks
+match_thresh: 0.8 # threshold for matching tracks
+fuse_score: True # Whether to fuse confidence scores with the iou distances before matching (no for MOT20)
+min_box_area: 10  # threshold for min box areas (for tracker evaluation, not used for now)
+aspect_ratio_thresh: 1.6 # threshold for aspect ratio
+
+# CMC arguments
+gmc_method: None # method of global motion compensation
+
+# ReID arguments
+with_reid: True  # whether to use reid
+proximity_thresh: 0.5  # threshold for rejecting low overlap reid matches
+appearance_thresh: 0.25  # threshold for rejecting low similarity reid matches
+method: 1  # Method for 1st association matching. 1: default (gating), 2: minimum, 3 full ReID
+
+
+

@@ -1,0 +1,27 @@
+tracker_type: yolojdetracker # tracker type
+
+# Tracking arguments
+track_high_thresh: 0.15 # threshold for the first association
+track_low_thresh: 0.1 # threshold for the second association
+new_track_thresh: 0.6 # threshold for init new track if the detection does not match any tracks
+first_match_thresh: 0.7 # threshold for matching tracks
+second_match_thresh: 0.05 # threshold for matching tracks
+new_match_thresh: 0.95 # threshold for matching tracks
+first_fuse: 1
+second_fuse: 0
+new_fuse: 1
+
+# CMC arguments
+use_ecc: False # method of global motion compensation
+
+# ReID arguments
+with_reid: True  # whether to use reid
+proximity_thresh: 0.95  # threshold for rejecting low overlap reid matches
+appearance_thresh: 1.0  # threshold for rejecting low similarity reid matches
+gate_thresh: 0.65  # threshold for gating reid matches
+appearance_weight: 1.0  # weight for appearance similarity
+min_weight: 0.55
+track_buffer: 40 # buffer to calculate the time when to remove tracks
+
+
+
