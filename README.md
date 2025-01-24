@@ -58,9 +58,3 @@ If you find YOLO11-JDE useful in your research or applications, please cite our 
       url={https://arxiv.org/abs/2501.13710}, 
 }
 ```
-
----
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
