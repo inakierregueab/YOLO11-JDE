@@ -15,6 +15,30 @@ We introduce YOLO11-JDE, a fast and accurate multi-object tracking (MOT) solutio
 
 ---
 
+## Dataset Information
+
+The datasets used for training YOLO11-JDE are:
+
+1. **CrowdHuman**  
+   - **Description**: Contains a wide range of crowded scenes with rich annotations.
+   - **Download**: Please download from the official website: [https://www.crowdhuman.org](https://www.crowdhuman.org).
+   - **Comments**: The original training and validation splits are preserved
+
+2. **MOT17**  
+   - **Description**: Provides sequences for multiple object tracking. Only bounding box annotations are used for training (track IDs are only used for validation).  
+   - **Download**: Please download from the official website: [https://motchallenge.net/data/MOT17/](https://motchallenge.net/data/MOT17/).
+   - **Comments**: Following previous work (e.g., *Towards Real-Time Multi-Object Tracking* and *Boost-track: boosting the similarity measure and detection confidence for improved multiple object tracking*), we construct a validation set by using the second half of each training sequence and removing videos in ETH that overlap with the MOT16 benchmark.
+  
+Both datasets must be converted to [YOLO format](https://docs.ultralytics.com/datasets/detect/). The config file used is "crowdhuman.yaml" which should be mapped to a folder containing both datasets merged.
+
+---
+
+## Download Model Weights
+
+Pre-trained model weights for YOLO11s-JDE are available for [download](https://drive.google.com/drive/folders/16btXRPikwXOsaItn06p4A8cBhTiIJdoZ?usp=share_link).
+
+---
+
 ## Results
 
 ### Benchmarks
