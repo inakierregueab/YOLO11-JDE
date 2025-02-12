@@ -22,14 +22,16 @@ The datasets used for training YOLO11-JDE are:
 1. **CrowdHuman**  
    - **Description**: Contains a wide range of crowded scenes with rich annotations.
    - **Download**: Please download from the official website: [https://www.crowdhuman.org](https://www.crowdhuman.org).
-   - **Comments**: The original training and validation splits are preserved
+   - **Comments**: The original training and validation splits are preserved.
 
 2. **MOT17**  
    - **Description**: Provides sequences for multiple object tracking. Only bounding box annotations are used for training (track IDs are only used for validation).  
    - **Download**: Please download from the official website: [https://motchallenge.net/data/MOT17/](https://motchallenge.net/data/MOT17/).
    - **Comments**: Following previous work (e.g., *Towards Real-Time Multi-Object Tracking* and *Boost-track: boosting the similarity measure and detection confidence for improved multiple object tracking*), we construct a validation set by using the second half of each training sequence and removing videos in ETH that overlap with the MOT16 benchmark.
   
-Both datasets must be converted to [YOLO format](https://docs.ultralytics.com/datasets/detect/). The config file used is "crowdhuman.yaml" which should be mapped to a folder containing both datasets merged.
+Both datasets must be converted to [YOLO format](https://docs.ultralytics.com/datasets/detect/). For validation and testing in the re-identification task, an extra column containing the original MOT17 track ID must be added to the dataset files. This column is unnecessary during training unless weak supervision with a few re-ID labels is desired. The format follows the original YOLO structure, with the extra track ID appended only for MOT17 validation and test sets, as CrowdHuman lacks tracking IDs.
+
+The config file used is `crowdhuman.yaml` which should be mapped to a folder containing both datasets merged.
 
 ---
 
@@ -52,6 +54,17 @@ Pre-trained model weights for YOLO11s-JDE are available for [download](https://d
 | FPS      | 35.9  | 18.9  |
 
 Compared to state-of-the-art methods, YOLO11-JDE offers superior FPS and competitive tracking accuracy with significantly fewer parameters.
+
+---
+
+## Enhancing Performance in Custom Scenarios
+
+To improve performance in custom scenarios, consider the following approaches:
+
+1. **Hyperparameter tuning** – Adjust the tracker settings in `ultralytics/cfg/trackers/yolojdetracker.yaml`, keeping in mind that the default values are optimized for MOT17 but generalize to MOT20 as well.  
+2. **Reducing domain drift** – Integrate reference images from your dataset into the training set using only bounding box annotations to improve adaptation.  
+3. **Weakly supervised learning** – If track information is available in your dataset, include both bounding box and track ID annotations in the training set.  
+4. **Fine-tuning the tracker** – If track information is available in your dataset, optimize the tracker's hyperparameters using `tracker/finetune/evolve.py` for a better fit to your camara setup.
 
 ---
 
