@@ -85,13 +85,12 @@ The code for YOLO11-JDE is based on the [Ultralytics YOLO](https://github.com/ul
 If you find YOLO11-JDE useful in your research or applications, please cite our paper:
 
 ```bibtex
-@misc{erregue2025yolo11jdefastaccuratemultiobject,
-      title={YOLO11-JDE: Fast and Accurate Multi-Object Tracking with Self-Supervised Re-ID}, 
-      author={Iñaki Erregue and Kamal Nasrollahi and Sergio Escalera},
-      year={2025},
-      eprint={2501.13710},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.13710}, 
+@InProceedings{Erregue_2025_WACV,
+    author    = {Erregue, I\~naki and Nasrollahi, Kamal and Escalera, Sergio},
+    title     = {YOLO11-JDE: Fast and Accurate Multi-Object Tracking with Self-Supervised Re-ID},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV) Workshops},
+    month     = {February},
+    year      = {2025},
+    pages     = {824-833}
 }
 ```
